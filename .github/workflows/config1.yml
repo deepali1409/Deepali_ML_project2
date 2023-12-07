@@ -12,7 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v2
-      - uses: actions/cache@v2
+      - name: Cache dependencies
+        uses: actions/cache@v2
         with:
          path: |
           ~/.cache/pip
