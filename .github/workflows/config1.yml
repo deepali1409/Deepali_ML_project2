@@ -12,7 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v2
-      - run: pip install -r requirements.txt #installing requirements
+      - uses: actions/cache@v2
+        with:
+         path: |
+          ~/.cache/pip
+         key: ${{ runner.os }}-pip-${{ hashFiles('**/*.txt') }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt #installing requirements
       - name: Build & push Docker image 
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
