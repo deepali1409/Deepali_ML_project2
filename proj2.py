@@ -13,6 +13,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+# Predicting the species using values entered by user
 @app.route("/predict", methods = ["POST"])
 def predict():
     float_features = [float(x) for x in request.form.values()]

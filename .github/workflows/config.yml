@@ -2,7 +2,7 @@ name: Deepali ML Proj2
 
 on:
   push:
-    branches: [ proj2 ]
+    branches: [ main ]
   
 
 jobs:
