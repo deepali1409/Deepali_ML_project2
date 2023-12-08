@@ -28,6 +28,6 @@ classifier = RandomForestClassifier()
 classifier.fit(X_train, y_train)
 
 # Make joblib file of our model
-dump(classifier, 'my_decision_tree_model.joblib')
+dump(classifier, 'model.joblib')
 
 #pickle.dump(classifier, open("model.pkl", "wb"))

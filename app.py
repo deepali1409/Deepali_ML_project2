@@ -4,7 +4,7 @@ import requests
 import numpy as np
 
 # # Loading my model
-my_dt_model = load('my_decision_tree_model.joblib')
+my_rf_model = load('model.joblib')
 
 # Initialising
 app = Flask(__name__)
@@ -18,7 +18,7 @@ def home():
 def predict():
     float_features = [float(x) for x in request.form.values()]
     features = [np.array(float_features)]
-    prediction = my_dt_model.predict(features)
+    prediction = my_rf_model.predict(features)
     return render_template("index.html", prediction_text = "The Species is {}".format(prediction))
 
 
